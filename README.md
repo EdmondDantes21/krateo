@@ -6,7 +6,7 @@
 <h1 align="center">Krateo PlatformOps</h1>
 
 <p align="center">
-  An open-source control plane for platform engineering that runs on Kubernetes.<br>
+  An open-source control plane on Kubernetes that creates and governs any resource, on any infrastructure.<br>
   Platform teams publish golden paths once; developers get a self-service portal for everything else.
 </p>
 
@@ -32,9 +32,11 @@
 
 ## What is this
 
-Platform teams spend their time on tickets and copy-pasted templates, while every new project waits days for infrastructure that should be routine. Krateo PlatformOps turns that work into declarations: the platform team describes a resource once, as a blueprint, and developers request it from a portal, with the result reconciled by Kubernetes like any other object.
+Platform teams spend their time on tickets and copy-pasted templates, while every new project waits days for infrastructure that should be routine.
 
-Under the hood, a composition engine turns each blueprint into its own Kubernetes API, any external service with an OpenAPI spec can be managed as a Kubernetes resource, and the portal itself is declared as Kubernetes resources, so it lives in Git with the rest of the platform.
+Krateo PlatformOps is a control plane that runs on Kubernetes and creates any resource on almost any infrastructure: Kubernetes clusters, applications, pipelines, databases, registries, API gateways. The only requirement is that the resource can be described in YAML as its desired state. Krateo validates every change, applies what was approved and keeps it true over time, inside and outside the cluster it runs on, on the major clouds and on-premises.
+
+Roles stay clear. The platform team writes the templates, as blueprints; developers use them from a self-service portal and manage the whole lifecycle of what they created from one place, instead of searching across dozens of dashboards.
 
 ## Install
 
@@ -62,13 +64,13 @@ No cluster at hand? Try Krateo in the browser in the [free self-service lab](htt
 
 ## Examples
 
-Runnable examples, each with its preconditions and a single command, live with the components they exercise. Start with the [installer examples](https://github.com/krateo-platformops/installer/tree/main/examples).
+Krateo installs the same way everywhere; what changes is the blueprints you add on top. Ready-to-use blueprints for AWS, Azure, Google Cloud, OpenStack, Keycloak and more live in the [krateo-blueprints](https://github.com/krateo-blueprints) organization.
 
 ## Docs
 
 - [Documentation](https://docs.krateo.io/?utm_source=github&utm_medium=readme&utm_campaign=krateo&utm_content=docs) for concepts, guides and reference <!-- REPLACE: confirm the long-term docs domain -->
 - [Release notes](RELEASE_NOTES.md) for what changed in each platform release
-- Roadmap: [REPLACE: public roadmap link]
+- Roadmap: [REPLACE: link to ROADMAP.md, to be created]
 
 ## Community
 

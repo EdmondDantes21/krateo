@@ -27,8 +27,10 @@
   <a href="#agentiko">Enterprise</a>
 </p>
 
-<!-- REPLACE: hero GIF (20-30 s, no audio): a golden path requested from the portal and the resulting resources reconciling. Store under docs/media/ -->
-<p align="center"><em>[REPLACE: hero GIF of a golden path from request to running resources]</em></p>
+<p align="center">
+  <img src="docs/media/golden-path.gif" width="900" alt="A developer picks a blueprint, fills in the form and watches the new event site reconcile until it is Ready">
+  <br><em>A developer orders an event site from a blueprint: form, review, reconciliation, Ready.</em>
+</p>
 
 ## What is this
 

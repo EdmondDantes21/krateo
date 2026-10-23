@@ -42,26 +42,25 @@ Roles stay clear. The platform team writes the templates, as blueprints; develop
 
 ## Install
 
-Requires a Kubernetes cluster (1.36 or later) and Helm. One command installs the whole platform:
+Krateo 3.0 installs with `krateoctl`, the Krateo CLI. You need a Kubernetes cluster (1.30 or later), `kubectl`, [`krateoctl`](https://docs.krateo.io/key-concepts/krateoctl/overview) and the three secrets listed in the [secrets spec](https://docs.krateo.io/key-concepts/krateoctl/secrets).
 
 ```sh
-helm install installer \
-  oci://ghcr.io/krateo-platformops/charts/installer \
-  --version 0.3.11 \
-  --namespace krateo-system --create-namespace \
-  --set bootstrap.coreProvider.enabled=true
+krateoctl install plan  --version 3.0.0 --type nodeport   # preview only, nothing touches the cluster
+krateoctl install apply --version 3.0.0 --type nodeport
 ```
 
-On kind or bare metal, add `--set exposure.type=NodePort`. Upgrades, uninstall and every option are in the [installer documentation](https://github.com/krateo-platformops/installer/blob/main/docs/usage.md).
+Use `--type loadbalancer` or `--type ingress` on a shared cluster, and add `--profile openshift` on OpenShift. The [installation guide](https://docs.krateo.io/how-to-guides/install-krateo/installing-krateo) covers a local kind cluster, PostgreSQL sizing and upgrades. Coming from 2.7? In-place upgrades are not supported: follow the [migration guide](https://docs.krateo.io/how-to-guides/migrate-krateo/migrate-from-2-7-0-to-3-0-0).
 
-No cluster at hand? Try Krateo in the browser in the [free self-service lab](https://killercoda.com/krateoplatformops/). <!-- REPLACE: verify the lab runs the current installer -->
+No cluster at hand? Try Krateo in the browser in the [free self-service lab](https://killercoda.com/krateoplatformops). <!-- REPLACE: verify the lab runs 3.0 -->
+
+<!-- REPLACE: the Helm umbrella installer in krateo-platformops/installer (0.3.11, Kubernetes 1.36+) is not the documented 3.0 path; switch this section only when it ships as the documented install method -->
 
 ## What you get
 
 - **Golden paths as Kubernetes APIs.** Each blueprint becomes a CRD with its own schema, versioning and RBAC.
 - **Any API as a resource.** Generate a Kubernetes operator from an OpenAPI spec and manage external services declaratively.
 - **A composable portal.** Navigation, pages and forms are Kubernetes resources, versioned in Git.
-- **Ordered, self-healing installs.** Components roll out in dependency order and reconcile like the rest of the platform.
+- **Installs you can review first.** `krateoctl install plan` shows every install or upgrade as a diff before anything is applied.
 - **FinOps and observability blueprints.** Cost and telemetry data collected on the same control plane.
 
 ## Examples
@@ -71,7 +70,8 @@ Krateo installs the same way everywhere; what changes is the blueprints you add 
 ## Docs
 
 - [Documentation](https://docs.krateo.io/?utm_source=github&utm_medium=readme&utm_campaign=krateo&utm_content=docs) for concepts, guides and reference <!-- REPLACE: confirm the long-term docs domain -->
-- [Release notes](RELEASE_NOTES.md) for what changed in each platform release
+- [What's new in 3.0](https://docs.krateo.io/release-notes/release-note-3.0.0) and the [compatibility matrix](https://docs.krateo.io/release-notes/matrix)
+- [Release notes](RELEASE_NOTES.md) for the history of every platform release
 - Roadmap: [REPLACE: link to ROADMAP.md, to be created]
 
 ## Community

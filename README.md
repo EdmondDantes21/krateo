@@ -58,7 +58,7 @@ No cluster at hand? Try Krateo in the browser in the [free self-service lab](htt
 
 - **Golden paths as Kubernetes APIs.** Each blueprint becomes a CRD with its own schema, versioning and RBAC.
 - **Any API as a resource.** Generate a Kubernetes operator from an OpenAPI spec with [oasgen-provider](https://github.com/krateo-platformops/oasgen-provider) and manage external services declaratively.
-- **A composable portal.** Navigation, pages and forms are Kubernetes resources, versioned in Git.
+- **A composable portal.** Navigation, pages and forms are Kubernetes resources.
 - **Installs you can review first.** `krateoctl install plan` shows every install or upgrade as a diff before anything is applied.
 - **FinOps and observability blueprints.** Cost and telemetry data collected on the same control plane.
 

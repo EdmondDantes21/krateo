@@ -40,18 +40,19 @@ Roles stay clear. The platform team writes the templates, as blueprints; develop
 
 ## Install
 
-Krateo 3.0 installs with `krateoctl`, the Krateo CLI. You need a Kubernetes cluster (1.30 or later), `kubectl`, [`krateoctl`](https://docs.krateo.io/key-concepts/krateoctl/overview) and the three secrets listed in the [secrets spec](https://docs.krateo.io/key-concepts/krateoctl/secrets).
+Krateo installs with one Helm chart, the [installer](https://github.com/krateo-platformops/installer). You need a Kubernetes cluster (1.36 or later) with no previous Krateo installation, `kubectl` and `helm`.
 
 ```sh
-krateoctl install plan  --version 3.0.0 --type nodeport   # preview only, nothing touches the cluster
-krateoctl install apply --version 3.0.0 --type nodeport
+helm install installer \
+  oci://ghcr.io/krateo-platformops/charts/installer \
+  --version 0.3.469 \
+  --namespace krateo-system --create-namespace \
+  --set bootstrap.coreProvider.enabled=true
 ```
 
-Use `--type loadbalancer` or `--type ingress` on a shared cluster, and add `--profile openshift` on OpenShift. The [installation guide](https://docs.krateo.io/how-to-guides/install-krateo/installing-krateo) covers a local kind cluster, PostgreSQL sizing and upgrades. Coming from 2.7? In-place upgrades are not supported: follow the [migration guide](https://docs.krateo.io/how-to-guides/migrate-krateo/migrate-from-2-7-0-to-3-0-0).
+Browser-facing services get a LoadBalancer by default. On kind or bare metal, use `--set exposure.type=NodePort`; behind a Gateway API controller, use `Gateway`. The [kind walkthrough](https://github.com/krateo-platformops/installer/blob/main/docs/runbooks/kind-default-profile.md) covers a local cluster end to end, and the [usage guide](https://github.com/krateo-platformops/installer/blob/main/docs/usage.md) covers upgrades and uninstall.
 
-No cluster at hand? Try Krateo in the browser in the [free self-service lab](https://killercoda.com/krateoplatformops). <!-- REPLACE: verify the lab runs 3.0 -->
-
-<!-- REPLACE: the Helm umbrella installer in krateo-platformops/installer (0.3.11, Kubernetes 1.36+) is not the documented 3.0 path; switch this section only when it ships as the documented install method -->
+No cluster at hand? Try Krateo in the browser in the [free self-service lab](https://killercoda.com/krateoplatformops). <!-- REPLACE: verify the lab runs the Helm installer -->
 
 ## What you get
 

@@ -11,12 +11,10 @@
 </p>
 
 <p align="center">
-  <!-- REPLACE: badges to be wired by engineering, in sync with the installer release pipeline -->
-  <img alt="Build: placeholder" src="https://img.shields.io/badge/build-REPLACE-lightgrey">
-  <img alt="Release: placeholder" src="https://img.shields.io/badge/release-REPLACE-lightgrey">
-  <img alt="License: placeholder" src="https://img.shields.io/badge/license-Apache%202.0%20(REPLACE)-lightgrey">
-  <img alt="Stars: placeholder" src="https://img.shields.io/badge/stars-REPLACE-lightgrey">
-  <!-- REPLACE: CNCF Landscape badge, only once the listing is approved (requires 300+ stars) -->
+  <img alt="Build: installer release pipeline status" src="https://img.shields.io/github/actions/workflow/status/krateo-platformops/installer/release-oci.yaml?label=build&event=push">
+  <img alt="Release: latest installer release" src="https://img.shields.io/github/v/release/krateo-platformops/installer?label=release&sort=semver">
+  <img alt="License: Apache 2.0" src="https://img.shields.io/github/license/krateo-platformops/installer">
+  <img alt="Stars: GitHub stars" src="https://img.shields.io/github/stars/krateo-platformops/krateo?label=stars&style=flat">
 </p>
 
 <p align="center">

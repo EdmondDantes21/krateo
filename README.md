@@ -34,7 +34,7 @@
 
 Platform teams spend their time on tickets and copy-pasted templates, while every new project waits days for infrastructure that should be routine.
 
-Krateo PlatformOps is a control plane that runs on Kubernetes and creates any resource on almost any infrastructure: Kubernetes clusters, applications, pipelines, databases, registries, API gateways. The only requirement is that the resource can be described in YAML as its desired state. Krateo validates every change, applies what was approved and keeps it true over time, inside and outside the cluster it runs on, on the major clouds and on-premises.
+Krateo PlatformOps is a control plane that runs on Kubernetes and creates any resource on almost any infrastructure: Kubernetes clusters, applications, pipelines, databases, registries, API gateways. The only requirement is that the resource can be described in YAML as its desired state. Krateo validates every change, applies what was approved and continuously reconciles it to the desired state, inside and outside the cluster it runs on, on the major clouds and on-premises.
 
 Roles stay clear. The platform team writes the templates, as blueprints; developers use them from a self-service portal and manage the whole lifecycle of what they created from one place, instead of searching across dozens of dashboards.
 

@@ -70,7 +70,6 @@ Ready-to-use blueprints for AWS, Azure, Google Cloud, OpenStack, Keycloak and mo
 - [Documentation](https://docs.krateo.io/?utm_source=github&utm_medium=readme&utm_campaign=krateo&utm_content=docs) for concepts, guides and reference <!-- REPLACE: confirm the long-term docs domain -->
 - [What's new in 3.0](https://docs.krateo.io/release-notes/release-note-3.0.0) and the [compatibility matrix](https://docs.krateo.io/release-notes/matrix)
 - [Release notes](RELEASE_NOTES.md) for the history of every platform release
-- Roadmap: [REPLACE: link to ROADMAP.md, to be created]
 
 ## Community
 

@@ -61,9 +61,9 @@ No cluster at hand? Try Krateo in the browser in the [free self-service lab](htt
 - **A composable portal.** Navigation, pages and forms are Kubernetes resources.
 - **Observability built in.** OpenTelemetry collects logs, metrics, traces and Kubernetes events into ClickHouse, explorable in HyperDX. Events are tagged with the composition they belong to and stream live into the portal.
 
-## Examples
+## Blueprints
 
-Krateo installs the same way everywhere; what changes is the blueprints you add on top. Ready-to-use blueprints for AWS, Azure, Google Cloud, OpenStack, Keycloak and more live in the [krateo-blueprints](https://github.com/krateo-blueprints) organization.
+Ready-to-use blueprints for AWS, Azure, Google Cloud, OpenStack, Keycloak and more live in the [krateo-blueprints](https://github.com/krateo-blueprints) organization.
 
 ## Docs
 
